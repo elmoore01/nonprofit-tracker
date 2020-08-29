@@ -1,0 +1,12 @@
+<li class="collection-item blue-grey-text text-darken-2"><%- fact.text %></li>
+  <% }) %>
+</ul>
+<!-- Add Dynamic UI form below this line -->
+<% if (nonprofit._id.equals(user && user._id)) { %>
+  <div class="card-action">
+    <form action="/facts" method="POST">
+      <input type="text" name="text" class="white-text">
+      <button type="submit" class="btn white-text">Add Fact</button>
+    </form>
+  </div>
+<% } %>
