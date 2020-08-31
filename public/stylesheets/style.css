@@ -1,8 +1,36 @@
 body {
-  padding: 50px;
+  padding: 10px;
+  margin: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+body > nav {
+  grid-area: nav;
+  background-color: #B8C0C2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  text-decoration: none;
+}
+
 a {
-  color: #00B7FF;
+  color: #071ef5;
+  margin-left: 10px;
+}
+
+.brand-logo {
+  margin-left: 5px;
+}
+
+form {
+  margin: 10px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+input {
+display: inline-block;
+width: 450px;
 }

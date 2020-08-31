@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var methodOverride = require('method-override');
+
 var session = require('express-session');
 var passport = require('passport')
 require('dotenv').config();
@@ -11,6 +13,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var nonprofitsRouter = require('./routes/nonprofits');
+var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -22,6 +25,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
+
 app.use(session({
   secret:'NpTrkr',
   resave: false,
@@ -38,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/nonprofits', nonprofitsRouter);
+app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

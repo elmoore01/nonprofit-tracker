@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const User = require('../models/user');
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -7,32 +8,40 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK
   },
   function(accessToken, refreshToken, profile, cb) {
-    nonprofitSchema.findOne({ 'googleId': profile.id }, function(err, nonprofit) {
+    // a user has logged in via OAuth!
+    User.findOne({ 'googleId': profile.id }, function(err, deserializeUser) {
       if (err) return cb(err);
-      if (nonprofit) {
-        return cb(null, nonprofit);
+      if (user) {
+        if (!user.avatar) {
+          user.avatar = profile.photos[0].value;
+          user.save(function(err) {
+            return cb(null, user);
+          });
+        } else {
+          return cb(null, user);
+        }
       } else {
-        // we have a new nonprofit via OAuth!
-        var newNonprofit = new nonprofit({
+        // we have a new user via OAuth!
+        const newUser = new User({
           name: profile.displayName,
           email: profile.emails[0].value,
           googleId: profile.id
         });
-        newNonprofit.save(function(err) {
+        newUser.save(function(err) {
           if (err) return cb(err);
-          return cb(null, newNonprofit);
+          return cb(null, newUser);
         });
       }
     });
   }
 ));
 
-passport.serializeUser(function(nonprofit, done) {
-    done(null, student.id);
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-    Student.findById(id, function(err, student) {
-      done(err, student);
-    });
+  User.findById(id, function(err, user) {
+    done(err, user);
   });
+});
