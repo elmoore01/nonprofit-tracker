@@ -1,4 +1,5 @@
 const Nonprofit = require('../models/nonprofit');
+const Bdmember = require('../models/bdmember');
 
 module.exports = {
     index,
@@ -38,6 +39,8 @@ function deleteNonprofit(req, res) {
 function show(req, res) {
     console.log(req.params.id);
     Nonprofit.findById(req.params.id, function(err, nonprofit) {
-        res.render('nonprofits/show', {nonprofit, title: 'Nonprofit Details'});
+        Bdmember.find({nonprofit: nonprofit._id}, function(err, bdmembers) {
+            res.render('nonprofits/show', {bdmembers, nonprofit, title: 'Nonprofit Details'});
+        })
     })
 }

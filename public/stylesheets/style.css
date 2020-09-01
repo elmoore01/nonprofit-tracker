@@ -1,8 +1,7 @@
 body {
   padding: 10px;
   margin: 10px;
-  background-color: dimgray;
-  color: white;
+  color: black;
   box-sizing: border-box;
   font: 14px "Lucida Grande", Arial, sans-serif;
 }
@@ -23,7 +22,12 @@ title {
 }
 
 a {
-  color: white;
+  color: rgb(25, 5, 250);
+  margin-left: 5px;
+}
+
+label {
+  color: rgb(25, 5, 250);
   margin-left: 5px;
 }
 
@@ -67,12 +71,17 @@ border-radius: 5px;
 
 #nonprofit-page {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   grid-gap: 1rem;
+  text-align: left;
 }
 
 * {
   box-sizing: border-box;
   padding: 5px;
   text-decoration: none;
+}
+
+h5 {
+  color: red;
 }

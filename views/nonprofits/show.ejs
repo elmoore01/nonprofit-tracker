@@ -1,32 +1,53 @@
 <%- include('../partials/header') %>
 
-<section id="nonprofit-page">
-    <div>Name: </div>
-    <div><%= nonprofit.name %></div>
-    <div>Contact: </div>
-    <div><%= nonprofit.contact %></div>
-    <div>Email: </div>
-    <div><%= nonprofit.email %></div>
-    <div>Address: </div>
-    <div><%= nonprofit.address %></div>
-    <div>City: </div>
-    <div><%= nonprofit.city %></div>
-    <div>Location: </div>
-    <div><%= nonprofit.location %></div>
-    <div>Zip: </div>
-    <div><%= nonprofit.zip %></div>
-    <div>Phone: </div>
-    <div><%= nonprofit.category %></div>
-    <div>Guidestar: </div>
-    <div><%= nonprofit.guidestar %></div>
-    <div>Website: </div>
-    <div><%= nonprofit.website %></div>
-    <div>Mission Statement: </div>
-    <div><%= nonprofit.missionStatement %></div>
-    <div>About Us: </div>
-    <div><%= nonprofit.aboutUs %></div>
-</section>
+<a href='/nonprofits/<%= nonprofit.id %>/bdmembers/new'>ADD BOARD MEMBERS</a>
 
-<form action = "/nonprofits/<%=nonprofit._id%>" method = "POST"></form>
+<form action = "/nonprofits/<%=nonprofit._id%>" method = "POST">
+<section id="nonprofit-page">
+    <div><%= nonprofit.name %>
+        <br><%= nonprofit.contact %>, <%= nonprofit.title %>
+        <br><%= nonprofit.email %>
+        <br><%= nonprofit.address %>
+        <br><%= nonprofit.city %>
+        <br><%= nonprofit.location %>
+        <br><%= nonprofit.zip %>
+        <br><%= nonprofit.phone %>
+        <br><%= nonprofit.website %>
+        <br><%= nonprofit.category %>
+        <br>Guidestar: <%= nonprofit.guidestar %>
+        <br>Mission Statement:
+        <br><%= nonprofit.missionStatement %>
+        <br>About Us:
+        <br><%= nonprofit.aboutUs %>
+    </div>
+</section>
+</form>
+
+<label>BOARD MEMBERS</label>
 <br>
-<%- include('../partials/footer') %>
+<br>
+<% if (bdmembers.length) { %>
+    <table>
+      <thead>
+        <tr>
+            <th>Name</th>
+          <th>Title</th>
+          <th>Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% bdmembers.forEach(function(m) { %>
+          <tr>
+            <td><%= m.name %></td>
+            <td><%= m.title %></td>
+            <td><%= m.company %></td>
+            <td><form action="/bdmembers/<%= m.id %>?_method=DELETE" method="POST">
+            <button type = "submit">Delete</button>
+            </form></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Board Members</h5>
+  <% } %>

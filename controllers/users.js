@@ -38,7 +38,7 @@ function deleteUser(req, res) {
 
 function show(req, res) {
     console.log(req.params.id);
-    User.findById(req.params.id, function(err, nonprofit) {
+    User.findById(req.params.id, function(err, user) {
         res.render('users/show', {user, title: 'User Details'});
     })
 }

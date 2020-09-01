@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const nonprofitSchema = new Schema({
     name: String,
     contact: String,
+    title: String,
     email: String,
     address: String,
     city: String,
@@ -21,6 +22,11 @@ const nonprofitSchema = new Schema({
     guidestar: String,
     missionStatement: String,
     aboutUs: String,
+    bdmembers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Bdmember'
+    }],
+    reviews: String,
 });
 
 module.exports = mongoose.model('Nonprofit', nonprofitSchema);

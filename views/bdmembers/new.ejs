@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<form action="/nonprofits/<%= nonprofit.id %>/bdmembers" id="members" method="POST">
+
+    <label>Name</label>
+    <br>
+    <input type="text" name="name">
+    <br>
+    <label>Title</label>
+    <br>
+    <input type="text" name="title">
+    <br>
+    <label>Company</label>
+    <br>
+    <input type="text" name="company">
+<br>
+<br>
+    <button type="submit">Add Member</button>
+</form> 
+
+<%- include('../partials/footer') %>
