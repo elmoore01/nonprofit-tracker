@@ -3,8 +3,9 @@ const Nonprofit = require('../models/nonprofit');
 module.exports = {
     index,
     new: newNonprofit,
-    // delete: deleteNonprofit,
-    // show 
+    create,
+    delete: deleteNonprofit,
+    show,
 };
 
 function index(req, res) {
@@ -13,19 +14,30 @@ function index(req, res) {
     });
 }
 
+function create(req, res) {
+    if (!req.body.nonprofits) delete req.body.nonprofits;
+    const nonprofit = new Nonprofit(req.body);
+    console.log(req.body);
+    nonprofit.save(function(err) {
+        console.log(err)
+        if (err) return res.redirect('/nonprofits/new')
+        res.redirect('/nonprofits');
+    });
+}
+
 function newNonprofit(req, res) {
     res.render('nonprofits/new', { title: 'Add Nonprofit' });
 }
 
-// function deleteNonprofit(req, res) {
-//     Nonprofit.findByIdAndDelete(req.params.id, function(err) {
-//         res.redirect('/nonprofits');
-//     });
-// }
+function deleteNonprofit(req, res) {
+    Nonprofit.findByIdAndDelete(req.params.id, function(err) {
+        res.redirect('/nonprofits');
+    });
+}
 
-// function show(req, res) {
-//     console.log(req.params.id);
-//     Nonprofit.findById(req.params.id, function(err, nonprofit) {
-//         res.render('nonprofits/show', {nonprofit, title: 'Nonprofit Details'});
-//     })
-// }
+function show(req, res) {
+    console.log(req.params.id);
+    Nonprofit.findById(req.params.id, function(err, nonprofit) {
+        res.render('nonprofits/show', {nonprofit, title: 'Nonprofit Details'});
+    })
+}

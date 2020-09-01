@@ -1,31 +1,31 @@
 <%- include('../partials/header') %>
-<a href="/nonprofits" <%- title === 'All Nonprofits' ? 'class="active"' : ''%>>VIEW ALL NONPROFITS</a>
-<br>
-<form action = "/nonprofits" method = "POST">
+
+<form id="add-nonprofit" action="/nonprofits" method="POST">
 
     <label>Organization Name</label>
     <br>
-    <input type="text" name = "name">
+    <input type="text" name="name">
     <br>
     <label>Contact Name</label>
     <br>
-    <input type="text" name = "contact">
+    <input type="text" name="contact">
     <br>
     <label>Contact Email</label>
     <br>
-    <input type="text" name = "email">
+    <input type="text" name="email">
     <br>
     <label>Address</Address></label>
     <br>
-    <input type="text" name = "address">
+    <input type="text" name="address">
     <br>
     <label>City</label>
     <br>
-    <input type="text" name = "city">
+    <input type="text" name="city">
     <br>
     <label>State</label>
     <br>
-    <select name="location">
+    <select name="location" id="locations">
+        <option value="" selected="selected">Select State</option>
         <option value="Alabama">Alabama</option>
         <option value="Alaska">Alaska</option>
         <option value="American Samoa">American Samoa</option>
@@ -85,15 +85,20 @@
     <br>
     <label>Zip</label>
     <br>
-    <input type="number" name = "zip">
+    <input type="number" name="zip">
     <br>
     <label>Phone</label>
     <br>
-    <input type="number" name = "phone">
+    <input type="number" name="phone">
     <br>
-    <label>Category</label>
+    <label>Website</label>
     <br>
-    <select name="category">
+    <input type="text" name="website">
+    <br>
+    <label>Categories</label>
+    <br>
+    <select name="category" id="categories">
+        <option value="" selected="selected">Select Category</option>
         <option>Aging</option>
         <option value="Aging">Aging</option>
         <option value="Agriculture and Food">Agriculture and Food</option>
@@ -134,9 +139,24 @@
         <option value="Women and Girls">Women and Girls</option>
     </select>
     <br>
+    <label>Guidestar Profile</Address></label>
     <br>
-    <button type="submit">Add Nonprofit</button>
+    <input type="text" name="guidestar">
+    <br>
+    <label>Mission Statement</label>
+    <br>
+    <div>
+        <textarea name="missionStatement" id="comments">
+        </textarea>
+        <br>
+    <label>About Us</label>
+    <br>
+        <textarea name="aboutUs" id="comments">
+        </textarea>
+    </div>
+    <br>
 
+    <input type="submit" value="Add Nonprofit">
 </form> 
 
 <%- include('../partials/footer') %>

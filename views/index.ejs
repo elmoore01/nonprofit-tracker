@@ -9,6 +9,10 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Welcome to the <%= title %>. Please select below.</p>
+    <br>
+    <a href="/nonprofits" <%- title === 'View All Nonprofits' ? 'class="active"' : ''%>>ALL NONPROFITS</a>
+    <a href="/nonprofits/new" <%- title === 'Add Nonprofit' ? 'class="active"' : ''%>>ADD NONPROFIT</a>
+  
   </body>
 </html>

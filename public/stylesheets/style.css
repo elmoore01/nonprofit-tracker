@@ -1,7 +1,10 @@
 body {
   padding: 10px;
   margin: 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: dimgray;
+  color: white;
+  box-sizing: border-box;
+  font: 14px "Lucida Grande", Arial, sans-serif;
 }
 
 body > nav {
@@ -12,14 +15,20 @@ body > nav {
   align-items: center;
   padding: 0 20px 0 30px;
   text-decoration: none;
+  
+}
+
+title {
+  font: 14px "Lucida Grande", Arial, sans-serif;
 }
 
 a {
-  color: #071ef5;
-  margin-left: 10px;
+  color: white;
+  margin-left: 5px;
 }
 
 .brand-logo {
+  text-align: center;
   margin-left: 5px;
 }
 
@@ -33,4 +42,37 @@ form {
 input {
 display: inline-block;
 width: 450px;
+border-radius: 5px;
+}
+
+#categories {
+display: inline-block;
+width: 450px;
+border-radius: 5px;
+}
+
+#locations {
+  display: inline-block;
+  width: 450px;
+  border-radius: 5px;
+}
+
+#comments {
+  display: inline-block;
+  width: 450px;
+  padding: 10px;
+  font: 14px "Lucida Grande", Arial, sans-serif;
+  border-radius: 5px;
+  }
+
+#nonprofit-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 5px;
+  text-decoration: none;
 }

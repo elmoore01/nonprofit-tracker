@@ -1,18 +1,32 @@
 <%- include('../partials/header') %>
 
 <section id="nonprofit-page">
-    <div>Name: <%= nonprofit.name %></div>
-    <div>Contact: <%= nonprofit.contact %></div>
-    <div>Email: <%= nonprofit.email %></div>
-    <div>Address: <%= nonprofit.address %></div>
-    <div>City: <%= nonprofit.city %></div>
-    <div>Location: <%= nonprofit.location %></div>
-    <div>Zip: <%= nonprofit.zip %></div>
-    <div>Phone: <%= nonprofit.category %></div>
-    <div>Guidestar: <%= nonprofit.guidestar %></div>
-    <div>Websitw: <%= nonprofit.website %></div>
-    <div>Mission Statement: <%= nonprofit.missionStatement %></div>
-    <div>About Us: <%= nonprofit.aboutUs %></div>
+    <div>Name: </div>
+    <div><%= nonprofit.name %></div>
+    <div>Contact: </div>
+    <div><%= nonprofit.contact %></div>
+    <div>Email: </div>
+    <div><%= nonprofit.email %></div>
+    <div>Address: </div>
+    <div><%= nonprofit.address %></div>
+    <div>City: </div>
+    <div><%= nonprofit.city %></div>
+    <div>Location: </div>
+    <div><%= nonprofit.location %></div>
+    <div>Zip: </div>
+    <div><%= nonprofit.zip %></div>
+    <div>Phone: </div>
+    <div><%= nonprofit.category %></div>
+    <div>Guidestar: </div>
+    <div><%= nonprofit.guidestar %></div>
+    <div>Website: </div>
+    <div><%= nonprofit.website %></div>
+    <div>Mission Statement: </div>
+    <div><%= nonprofit.missionStatement %></div>
+    <div>About Us: </div>
+    <div><%= nonprofit.aboutUs %></div>
 </section>
 
+<form action = "/nonprofits/<%=nonprofit._id%>" method = "POST"></form>
+<br>
 <%- include('../partials/footer') %>

@@ -1,9 +1,21 @@
 <%- include('../partials/header') %>
 
-<section id="user-page">
-    <div>Name: <%= user.name %></div>
-    <div>GoogleId: <%= user.googleId %></div>
-    <div>Email: <%= user.email %></div>
-</section>
-
-<%- include('../partials/footer') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(function(u) { %>
+      <tr>
+        <td><%= u.name %></td>
+        <td><%= u.email %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

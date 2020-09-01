@@ -18,7 +18,7 @@ const nonprofitSchema = new Schema({
         enum: ['Aging', 'Agriculture and Food', 'Arts and Culture', 'Athletics and Sports', 'Children and Youth', 'Civil Society', 'Community and Economic Development', 'Computers and Technology', 'Consumer Protection', 'Crime and Safety', 'Disabilities', 'Domestic Violence', 'Education and Literacy', 'Employment and Labor', 'Energy and Environment', 'LGBTQI', 'Government Reform', 'Health and Wellness', 'Housing and Homelessness', 'Human Rights and Civil Liberties', 'Humanitarian and Disaster Relief', 'Hunger', 'Immigration', 'Journalism and Media', 'Men and Boys', 'Nonprofits and Philanthropy', 'Parenting and Families', 'Poverty', 'Prison and Judicial Reform', 'Race and Ethnicity', 'Religion', 'Science', 'Substance Abuse and Recovery', 'Transportation', 'Welfare and Public Assistance', 'Women and Girls'],
     },
     website: String,
-    guidestarProfile: String,
+    guidestar: String,
     missionStatement: String,
     aboutUs: String,
 });
