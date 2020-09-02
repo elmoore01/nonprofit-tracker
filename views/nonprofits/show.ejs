@@ -3,7 +3,7 @@
 <a href='/reviews/nonprofits/<%= nonprofit.id %>/reviews/new'>ADD REVIEWS</a>
 <br>
 <br>
-<img src="https://www.lifeprepacademy.org/wp-content/uploads/2020/09/EdCALogo-4in.jpg">
+<img src="<%= nonprofit.logo %>">
 <br>
 <div id="npdata">
 <form action = "/nonprofits/<%=nonprofit._id%>" method = "POST">

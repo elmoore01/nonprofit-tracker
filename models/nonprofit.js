@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 
 const nonprofitSchema = new Schema({
 
+    logo: String,
     name: String,
     contact: String,
     title: String,
