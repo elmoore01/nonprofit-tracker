@@ -46,7 +46,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/nonprofits', nonprofitsRouter);
-app.use('/', bdmembersRouter);
+app.use('/bdmembers', bdmembersRouter);
 app.use('/users', usersRouter);
 app.use('/reviews', reviewsRouter);
 

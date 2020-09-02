@@ -1,4 +1,5 @@
 const Review = require('../models/review');
+const nonprofit = require('../models/nonprofit');
 
 module.exports = {
     index,
@@ -15,18 +16,21 @@ function index(req, res) {
 }
 
 function create(req, res) {
-    if (!req.body.reviews) delete req.body.reviews;
+    req.body.nonprofit=req.params.id;
+    const nonprofitId = req.params.id;
     const review = new Review(req.body);
     console.log(req.body);
     review.save(function(err) {
         console.log(err)
         if (err) return res.redirect('/reviews/new')
-        res.redirect('/reviews');
+        res.redirect(`/nonprofits/${nonprofitId}`);
     });
 }
 
 function newReview(req, res) {
-    res.render('reviews/new', { title: 'Add Review' });
+    nonprofit.findById(req.params.id, function(err, nonprofit) {
+        res.render('reviews/new', { title: 'Add Review', nonprofit });
+    })
 }
 
 function deleteReview(req, res) {

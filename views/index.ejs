@@ -8,11 +8,11 @@
     <title><%= title %></title>
   </head>
   <body>
+    <div id="homepage">
     <h1><%= title %></h1>
-    <p>Welcome to the <%= title %>. Please select below.</p>
+    <p>A Collaboration Site for Community Based Organizations</p>
     <br>
-    <a href="/nonprofits" <%- title === 'View All Nonprofits' ? 'class="active"' : ''%>>ALL NONPROFITS</a>
-    <a href="/nonprofits/new" <%- title === 'Add Nonprofit' ? 'class="active"' : ''%>>ADD NONPROFIT</a>
-  
+    <a href="/nonprofits" <%- title === 'View All Nonprofits' ? 'class="active"' : ''%>>VIEW ALL NONPROFITS</a>
+  </div>  
   </body>
 </html>

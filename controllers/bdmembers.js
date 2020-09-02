@@ -28,7 +28,7 @@ function create(req, res) {
 }
 
 function newBdmember(req, res) {
-    nonprofit.findById(req.params.id, function (err, nonprofit) {
+    nonprofit.findById(req.params.id, function(err, nonprofit) {
         res.render('bdmembers/new', { title: 'Add Member', nonprofit });
     })
 }

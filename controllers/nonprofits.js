@@ -1,5 +1,6 @@
 const Nonprofit = require('../models/nonprofit');
 const Bdmember = require('../models/bdmember');
+const Review = require('../models/review');
 
 module.exports = {
     index,
@@ -40,7 +41,9 @@ function show(req, res) {
     console.log(req.params.id);
     Nonprofit.findById(req.params.id, function(err, nonprofit) {
         Bdmember.find({nonprofit: nonprofit._id}, function(err, bdmembers) {
-            res.render('nonprofits/show', {bdmembers, nonprofit, title: 'Nonprofit Details'});
+            Review.find({nonprofit: nonprofit._id}, function(err, reviews) {
+            res.render('nonprofits/show', {bdmembers, reviews, nonprofit, title: 'Nonprofit Details'});
+            })
         })
     })
 }

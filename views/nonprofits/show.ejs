@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
-
-<a href='/nonprofits/<%= nonprofit.id %>/bdmembers/new'>ADD BOARD MEMBERS</a>
+<br>
+<a href='/bdmembers/nonprofits/<%= nonprofit.id %>/bdmembers/new'>ADD BOARD MEMBERS</a>
+<a href='/reviews/nonprofits/<%= nonprofit.id %>/reviews/new'>ADD REVIEWS</a>
 
 <form action = "/nonprofits/<%=nonprofit._id%>" method = "POST">
 <section id="nonprofit-page">
@@ -8,17 +9,13 @@
         <br><%= nonprofit.contact %>, <%= nonprofit.title %>
         <br><%= nonprofit.email %>
         <br><%= nonprofit.address %>
-        <br><%= nonprofit.city %>
-        <br><%= nonprofit.location %>
-        <br><%= nonprofit.zip %>
+        <br><%= nonprofit.city %>, <%= nonprofit.location %> <%= nonprofit.zip %>
         <br><%= nonprofit.phone %>
-        <br><%= nonprofit.website %>
-        <br><%= nonprofit.category %>
+        <br>Website: <%= nonprofit.website %>
+        <br>Category: <%= nonprofit.category %>
         <br>Guidestar: <%= nonprofit.guidestar %>
-        <br>Mission Statement:
-        <br><%= nonprofit.missionStatement %>
-        <br>About Us:
-        <br><%= nonprofit.aboutUs %>
+        <br><br>Mission Statement: <%= nonprofit.missionStatement %>
+        <br><br>About Us: <%= nonprofit.aboutUs %>
     </div>
 </section>
 </form>
@@ -51,3 +48,30 @@
   <% } else { %>
     <h5>No Board Members</h5>
   <% } %>
+
+<label>REVIEWS</label>
+<br>
+<br>
+<% if (reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+          <th>Name</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% reviews.forEach(function(r) { %>
+        <tr>
+          <td><%= r.name %></td>
+          <td><%= r.review %></td>
+          <td><form action="/reviews/<%= r.id %>?_method=DELETE" method="POST">
+          <button type = "submit">Delete</button>
+          </form></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews</h5>
+<% } %>

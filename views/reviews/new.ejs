@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<form action="/reviews/nonprofits/<%= nonprofit.id %>/reviews" id="reviews" method="POST">
+
+    <label>Name</label>
+    <br>
+    <input type="text" name="name">
+    <br>
+    <label>Review</label>
+    <br>
+    <div>
+        <textarea name="review" id="rcomments">
+        </textarea>
+        <br>
+    </div>
+    <br>
+    <button type="submit">Add Review</button>
+</form> 
+
+<%- include('../partials/footer') %>
