@@ -2,25 +2,31 @@
 <br>
 <a href='/bdmembers/nonprofits/<%= nonprofit.id %>/bdmembers/new'>ADD BOARD MEMBERS</a>
 <a href='/reviews/nonprofits/<%= nonprofit.id %>/reviews/new'>ADD REVIEWS</a>
-
+<br>
+<br>
+<img src="https://www.lifeprepacademy.org/wp-content/uploads/2020/09/EdCALogo-4in.jpg">
+<br>
+<div id="npdata">
 <form action = "/nonprofits/<%=nonprofit._id%>" method = "POST">
 <section id="nonprofit-page">
     <div><%= nonprofit.name %>
         <br><%= nonprofit.contact %>, <%= nonprofit.title %>
         <br><%= nonprofit.email %>
         <br><%= nonprofit.address %>
-        <br><%= nonprofit.city %>, <%= nonprofit.location %> <%= nonprofit.zip %>
-        <br><%= nonprofit.phone %>
-        <br>Website: <%= nonprofit.website %>
-        <br>Category: <%= nonprofit.category %>
-        <br>Guidestar: <%= nonprofit.guidestar %>
-        <br><br>Mission Statement: <%= nonprofit.missionStatement %>
-        <br><br>About Us: <%= nonprofit.aboutUs %>
+        <%= nonprofit.city %>, <%= nonprofit.location %> <%= nonprofit.zip %>
+        <br><%= nonprofit.phone %> | Website: <%= nonprofit.website %>
+        <br>Category: <%= nonprofit.category %> | Guidestar: <%= nonprofit.guidestar %>
     </div>
-</section>
+    <div id="npmission">
+        Mission Statement: <%= nonprofit.missionStatement %>
+        <br><br>About Us: <%= nonprofit.aboutUs %>
+      </section>
+    </div>
 </form>
-
-<label>BOARD MEMBERS</label>
+</div>
+<div id="npmembers">
+<br>
+  <label>BOARD MEMBERS</label>
 <br>
 <br>
 <% if (bdmembers.length) { %>
@@ -34,7 +40,7 @@
       </thead>
       <tbody>
         <% bdmembers.forEach(function(m) { %>
-          <tr>
+          <tr id="members">
             <td><%= m.name %></td>
             <td><%= m.title %></td>
             <td><%= m.company %></td>
@@ -48,8 +54,12 @@
   <% } else { %>
     <h5>No Board Members</h5>
   <% } %>
-
-<label>REVIEWS</label>
+</div>
+<br>
+</iframe>
+<br>
+<div id="npreviews">
+<br><label>REVIEWS</label>
 <br>
 <br>
 <% if (reviews.length) { %>
@@ -63,8 +73,8 @@
     <tbody>
       <% reviews.forEach(function(r) { %>
         <tr>
-          <td><%= r.name %></td>
-          <td><%= r.review %></td>
+          <td id="review"><%= r.name %></td>
+          <td id="review"><%= r.review %></td>
           <td><form action="/reviews/<%= r.id %>?_method=DELETE" method="POST">
           <button type = "submit">Delete</button>
           </form></td>
@@ -75,3 +85,4 @@
 <% } else { %>
   <h5>No Reviews</h5>
 <% } %>
+</div>
