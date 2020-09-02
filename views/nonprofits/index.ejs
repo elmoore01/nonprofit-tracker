@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <html>
 <a href="/" <%- title === 'Home' ? 'class="active"' : ''%>>HOME</a>  
-<a href="/nonprofits/new" <%- title === 'Add Nonprofit' ? 'class="active"' : ''%>>ADD NONPROFIT</a>
 <head>
   <title>Nonprofit Tracker</title>
   <!-- Google Icon Fonts used by Materialize -->
@@ -33,11 +31,14 @@
     </nav>
   </div>
   <br>
-
+  <br>
+  <a href="/nonprofits/new" <%- title === 'Add Nonprofit' ? 'class="active"' : ''%>>ADD NONPROFIT</a>
+  <br>
+  <br>
 <table id="list">
   <thead>
     <tr>
-      <th>Nonprofit</th>
+      <th >Nonprofit</th>
       <th>Location</th>
       <th>Category</th>
       <th></th>
@@ -51,6 +52,8 @@
         <td><%= n.category %></td>
         <td><form action="/nonprofits/<%= n.id %>?_method=DELETE" method="POST">
         <button type="submit">DELETE</button></form></td>
+        <td><form action="/nonprofits/<%= n.id %>?_method=PUT" method="PUT">
+          <button type="submit">UPDATE</button></form></td>
         <td>
           <a href="/nonprofits/<%= n._id %>">Details</a>
         </td>

@@ -8,6 +8,7 @@ module.exports = {
     create,
     delete: deleteNonprofit,
     show,
+    update: updateNonprofit,
 };
 
 function index(req, res) {
@@ -46,4 +47,10 @@ function show(req, res) {
             })
         })
     })
+}
+
+function updateNonprofit(req, res) {
+    Nonprofit.findByIdAndUpdate(req.params.id, function(err) {
+        res.redirect('/nonprofits');
+    });
 }
