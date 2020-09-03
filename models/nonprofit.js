@@ -27,6 +27,7 @@ const nonprofitSchema = new Schema({
     guidestar: String,
     missionStatement: String,
     aboutUs: String,
+    video: String,
     bdmembers: [{
         type: Schema.Types.ObjectId,
         ref: 'Bdmember'

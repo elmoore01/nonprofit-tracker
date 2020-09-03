@@ -102,7 +102,7 @@ border-radius: 5px;
   /* text-align: center; */
   /* color: white; */
   /* background-color: darkslateblue; */
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
 }
 
