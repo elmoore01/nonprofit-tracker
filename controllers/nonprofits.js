@@ -39,11 +39,11 @@ function deleteNonprofit(req, res) {
 }
 
 function show(req, res) {
-    console.log(req.params.id);
+    console.log(req.user);
     Nonprofit.findById(req.params.id, function(err, nonprofit) {
         Bdmember.find({nonprofit: nonprofit._id}, function(err, bdmembers) {
             Review.find({nonprofit: nonprofit._id}, function(err, reviews) {
-            res.render('nonprofits/show', {bdmembers, reviews, nonprofit, title: 'Nonprofit Details'});
+            res.render('nonprofits/show', {bdmembers, reviews, nonprofit, user: req.user, title: 'Nonprofit Details'});
             })
         })
     })

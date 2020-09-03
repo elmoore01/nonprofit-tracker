@@ -1,6 +1,11 @@
+<br>
 <!DOCTYPE html>
 <html>
-<a href="/" <%- title === 'Home' ? 'class="active"' : ''%>>HOME</a>  
+  <div id="allpage">
+    <a href="/" <%- title === 'Home' ? 'class="active"' : ''%>>HOME</a>
+    <a href="/nonprofits/new" <%- title === 'Add Nonprofit' ? 'class="active"' : ''%>>ADD NONPROFIT</a>
+    <a href="/">LOG OUT</a>  
+  </div>
 <head>
   <title>Nonprofit Tracker</title>
   <!-- Google Icon Fonts used by Materialize -->
@@ -11,30 +16,7 @@
   <!-- JavaScript for Materialize -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
-
 <body>
-  <div class="navbar-wrapper">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Nonprofit Tracker</a>
-        <!-- Add login UI here -->
-        <ul class="right">
-          <li>
-          <% if (user) { %>
-            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-          <% } else { %>
-            <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-          <% } %>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <br>
-  <br>
-  <a href="/nonprofits/new" <%- title === 'Add Nonprofit' ? 'class="active"' : ''%>>ADD NONPROFIT</a>
-  <br>
-  <br>
 <table id="list">
   <thead>
     <tr>

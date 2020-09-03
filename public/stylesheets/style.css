@@ -17,7 +17,7 @@ body {
 body > nav {
   grid-area: nav;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   padding: 0 20px 0 5px;
   text-decoration: none;
   
@@ -29,6 +29,9 @@ title {
 
 a {
   color: black;
+  /* padding: 0 20px 0 5px;
+  display: flex;
+  justify-content: flex-end; */
   margin-left: 5px;
 }
 
@@ -99,9 +102,6 @@ border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* text-align: center; */
-  /* color: white; */
-  /* background-color: darkslateblue; */
   background-size: cover;
   background-position: center;
 }
@@ -173,6 +173,18 @@ img {
 }
 #login {
   font-size: 14px;
+  text-align: right;
+  align-items: right;
+}
+
+#pagenav {
+  font-size: 14px;
+  text-align: right;
+}
+
+#allpage {
+  font-size: 14px;
+  text-align: right;
 }
 
 #homecaption{
