@@ -45,7 +45,8 @@
             <td><%= m.company %></td>
             <td><form action="/bdmembers/<%= m.id %>?_method=DELETE" method="POST">
             <button type = "submit">Delete</button>
-            </form></td>
+          </form></td>
+          <td><a href="/bdmembers/<%= m.id %>/edit" method="GET">UPDATE</a></td>
           </tr>
         <% }); %>
       </tbody>

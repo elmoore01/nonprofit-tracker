@@ -28,10 +28,10 @@ const nonprofitSchema = new Schema({
     missionStatement: String,
     aboutUs: String,
     video: String,
-    bdmembers: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Bdmember'
-    }],
+    // bdmembers: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Bdmember'
+    // }],
     reviews: String,
 });
 

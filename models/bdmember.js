@@ -5,10 +5,10 @@ const BdmemberSchema = new Schema({
     name: String,
     title: String,
     company: String,
-    nonprofit: [{
+    nonprofit: {
         type: Schema.Types.ObjectId,
         ref: 'Nonprofit'
-    }],
+    },
 });
 
 module.exports = mongoose.model('Bdmember', BdmemberSchema);

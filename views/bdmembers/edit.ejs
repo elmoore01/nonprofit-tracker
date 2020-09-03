@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<form action="/bdmembers/<%= bdmember.id %>?_method=PUT" id="members" method="POST">
+
+    <label id="bname">Name</label>
+    <br>
+    <input type="text" name="name">
+    <br>
+    <label id="bname">Title</label>
+    <br>
+    <input type="text" name="title">
+    <br>
+    <label id="bname">Company</label>
+    <br>
+    <input type="text" name="company">
+<br>
+<br>
+    <button type="submit">Update Member</button>
+</form> 
+
+<%- include('../partials/footer') %>

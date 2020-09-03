@@ -34,11 +34,11 @@ function newReview(req, res) {
 }
 
 function deleteReview(req, res) {
-    Review.findByIdAndDelete(req.params.id, function(err) {
-        res.redirect('/reviews');
-    });
+    Review.findByIdAndDelete(req.params.id, function (err, review) {
+        console.log("review nonprofit", review);
+        res.redirect(`/nonprofits/${review.nonprofit}`)
+      });
 }
-
 function show(req, res) {
     console.log(req.params.id);
     Review.findById(req.params.id, function(err, review) {
