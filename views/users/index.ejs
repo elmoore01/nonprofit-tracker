@@ -1,0 +1,24 @@
+<a href="" class="brand-logo left">User Reviews</a>
+<!-- Add login UI here -->
+<ul class="right">
+	<li>
+	<% if (user) { %>
+		<a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+	<% } else { %>
+		<a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+	<% } %>
+	</li>
+</ul>
+
+<li class="collection-item blue-grey-text text-darken-2"><%- review.text %></li>
+<% }) %>
+</ul>
+<!-- Add Dynamic UI form below this line -->
+<% if (user._id.equals(user && user._id)) { %>
+<div class="card-action">
+  <form action="/reviews" method="POST">
+    <input type="text" name="text" class="white-text">
+    <button type="submit" class="btn white-text">Add Review</button>
+  </form>
+</div>
+<% } %>

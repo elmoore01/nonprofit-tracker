@@ -6,6 +6,8 @@ module.exports = {
     create,
     delete: deleteUser,
     show,
+    isLoggedIn,
+    addReview,
 }
 
 function index(req, res) {
@@ -42,3 +44,15 @@ function show(req, res) {
         res.render('users/show', {user, title: 'User Details'});
     })
 }
+
+function isLoggedIn(req, res, next) {
+    if ( req.isAuthenticated() ) return next();
+    res.redirect('/auth/google');
+}
+
+function addReview(req, res, next) {
+    req.user.reviews.push(req.body);
+    req.user.save(function(err) {
+      res.redirect('/users');
+    });
+  }

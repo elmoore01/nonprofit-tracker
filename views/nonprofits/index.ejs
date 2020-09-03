@@ -52,8 +52,6 @@
         <td><%= n.category %></td>
         <td><form action="/nonprofits/<%= n.id %>?_method=DELETE" method="POST">
         <button type="submit">DELETE</button></form></td>
-        <td><form action="/nonprofits/<%= n.id %>?_method=PUT" method="PUT">
-          <button type="submit">UPDATE</button></form></td>
         <td>
           <a href="/nonprofits/<%= n._id %>">Details</a>
         </td>
