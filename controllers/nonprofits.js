@@ -12,8 +12,10 @@ module.exports = {
 };
 
 function index(req, res) {
+    console.log(req.user);
+    const user = "hello"
     Nonprofit.find({}, function(err, nonprofits) {
-        res.render('nonprofits/index', { nonprofits, title: 'All Nonprofits' });
+        res.render('nonprofits/index', { nonprofits, user,  title: 'All Nonprofits' });
     });
 }
 

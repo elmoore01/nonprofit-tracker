@@ -26,7 +26,7 @@ router.get('/oauth2callback', passport.authenticate(
 router.get('/logout', function(req, res) {
   req.logout();
   req.user = null;
-  res.redirect('/nonprofits');
+  res.redirect('/');
 });
 
 module.exports = router;
