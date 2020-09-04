@@ -8,11 +8,11 @@ module.exports = {
     create,
     delete: deleteNonprofit,
     show,
-    update: updateNonprofit,
+    update,
+    edit,
 };
 
 function index(req, res) {
-    console.log(req.user);
     const user = "hello"
     Nonprofit.find({}, function(err, nonprofits) {
         res.render('nonprofits/index', { nonprofits, user,  title: 'All Nonprofits' });
@@ -22,9 +22,7 @@ function index(req, res) {
 function create(req, res) {
     if (!req.body.nonprofits) delete req.body.nonprofits;
     const nonprofit = new Nonprofit(req.body);
-    console.log(req.body);
     nonprofit.save(function(err) {
-        console.log(err)
         if (err) return res.redirect('/nonprofits/new')
         res.redirect('/nonprofits');
     });
@@ -41,7 +39,6 @@ function deleteNonprofit(req, res) {
 }
 
 function show(req, res) {
-    console.log(req.user);
     Nonprofit.findById(req.params.id, function(err, nonprofit) {
         Bdmember.find({nonprofit: nonprofit._id}, function(err, bdmembers) {
             Review.find({nonprofit: nonprofit._id}, function(err, reviews) {
@@ -51,8 +48,37 @@ function show(req, res) {
     })
 }
 
-function updateNonprofit(req, res) {
+function update(req, res) {
     Nonprofit.findByIdAndUpdate(req.params.id, function(err) {
         res.redirect('/nonprofits');
     });
+}
+
+function update(req, res) {
+    Nonprofit.findByIdAndUpdate(req.params.id, 
+        {   logo: req.body.logo,
+            name: req.body.name,
+            contact: req.body.contact,
+            title: req.body.title,
+            email: req.body.email,
+            address: req.body.address,
+            city: req.body.city,
+            location: req.body.location,
+            zip: req.body.zip,
+            phone: req.body.phone,
+            category: req.body.category,
+            website: req.body.website,
+            guidestar: req.body.guidestar,
+            missionStatement: req.body.missionStatement,
+            aboutUs: req.body.aboutUs,
+            video: req.body.video,
+            reviews: req.body.reviews,
+        }, function (err, bdmember) {
+        res.redirect(`/nonprofits/${nonprofit.nonprofit}`)
+    });
+}
+function edit(req, res) {
+    Nonprofit.findById(req.params.id, function(err, nonprofit) {
+        res.render('nonprofits/edit', {nonprofit, title: "update nonprofit"})
+    })
 }

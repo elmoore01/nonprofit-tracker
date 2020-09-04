@@ -19,9 +19,7 @@ function index(req, res) {
 function create(req, res) {
     if (!req.body.users) delete req.body.users;
     const user = new User(req.body);
-    console.log(req.body);
     user.save(function(err) {
-        console.log(err)
         if (err) return res.redirect('/users/new')
         res.redirect('/users');
     });
@@ -39,7 +37,6 @@ function deleteUser(req, res) {
 }
 
 function show(req, res) {
-    console.log(req.params.id);
     User.findById(req.params.id, function(err, user) {
         res.render('users/show', {user, title: 'User Details'});
     })

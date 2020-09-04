@@ -19,9 +19,7 @@ function create(req, res) {
     req.body.nonprofit=req.params.id;
     const nonprofitId = req.params.id;
     const review = new Review(req.body);
-    console.log(req.body);
     review.save(function(err) {
-        console.log(err)
         if (err) return res.redirect('/reviews/new')
         res.redirect(`/nonprofits/${nonprofitId}`);
     });
@@ -35,12 +33,10 @@ function newReview(req, res) {
 
 function deleteReview(req, res) {
     Review.findByIdAndDelete(req.params.id, function (err, review) {
-        console.log("review nonprofit", review);
         res.redirect(`/nonprofits/${review.nonprofit}`)
       });
 }
 function show(req, res) {
-    console.log(req.params.id);
     Review.findById(req.params.id, function(err, review) {
         res.render('reviews/show', {review, title: 'Review Details'});
     })

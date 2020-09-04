@@ -33,7 +33,7 @@ function newBdmember(req, res) {
 }
 
 function show(req, res) {
-    console.log(req.params.id);
+
     Bdmember.findById(req.params.id, function(err, bdmember) {
         res.render('bdmembers/show', {bdmember, title: 'Member Details'});
     })
@@ -41,7 +41,6 @@ function show(req, res) {
 
 function deleteBdmember(req, res) {
     Bdmember.findByIdAndDelete(req.params.id, function (err, bdmember) {
-        console.log("bdmember nonprofit", bdmember);
         res.redirect(`/nonprofits/${bdmember.nonprofit}`)
       });
 }
@@ -58,7 +57,6 @@ function update(req, res) {
 
 function edit(req, res) {
     Bdmember.findById(req.params.id, function(err, bdmember) {
-        console.log(bdmember);
         res.render('bdmembers/edit', {bdmember, title: "update member"})
     })
 }
