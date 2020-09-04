@@ -13,15 +13,15 @@ The Nonprofit Tracker is a hosted database of community based organizations thro
 
 ![](https://www.lifeprepacademy.org/wp-content/uploads/2020/09/NPTracker9.jpg)
 
-TECHNOLOGIES: The technologies used to create the **Nonprofit Tracker** include:
+**TECHNOLOGIES:** The technologies used to create the **Nonprofit Tracker** include:
 
-HTML
-Javascript
-CSS
+- HTML
+- Javascript
+- CSS
 
-GETTING STARTED: Please [click here](https://nonprofit-tracker.herokuapp.com) to visit Nonprofit Tracker.
+**GETTING STARTED:** Please [click here](https://nonprofit-tracker.herokuapp.com) to visit **Nonprofit Tracker**.
 
-NEXT STEPS: For future versions, I will include the following features:
+**NEXT STEPS:** For future versions, I will include the following features:
 
 1. Add search to homepage
 2. Display logged in name in right corner with "Hi Eric"
