@@ -18,6 +18,9 @@ The Nonprofit Tracker is a hosted database of community based organizations thro
 - HTML
 - Javascript
 - CSS
+- Mongoose
+- Passport
+- OAuth
 
 **GETTING STARTED:** Please [click here](https://nonprofit-tracker.herokuapp.com) to visit **Nonprofit Tracker**.
 
