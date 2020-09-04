@@ -19,7 +19,7 @@ HTML
 Javascript
 CSS
 
-GETTING STARTED: Please [click here](https://nonprofit-tracker.herokuapp.com/nonprofits/new) to visit Nonprofit Tracker.
+GETTING STARTED: Please [click here](https://nonprofit-tracker.herokuapp.com) to visit Nonprofit Tracker.
 
 NEXT STEPS: For future versions, I will include the following features:
 
