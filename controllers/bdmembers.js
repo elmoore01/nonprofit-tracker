@@ -21,14 +21,9 @@ function index(req, res) {
 function create(req, res) {
     req.body.nonprofit=req.params.id;
     const nonprofitId = req.params.id;
-    // const bdmember = new Bdmember(req.body);
     Bdmember.create(req.body, function(err, bdmember) {
         res.redirect(`/nonprofits/${nonprofitId}`);
     })
-    // console.log(req.body);
-    // bdmember.save(function(err) {
-    //     console.log(err)
-    //     if (err) return res.redirect('/bdmembers/new')
 }
 
 function newBdmember(req, res) {

@@ -1,14 +1,12 @@
-
 <%- include('../partials/header') %>
-<br>
-<br>
+<h1 id="hometitle">Nonprofit Tracker</h1>
 <img src="<%= nonprofit.logo %>">
+<br>
 <% if (user) { %>
   <a href='/bdmembers/nonprofits/<%= nonprofit.id %>/bdmembers/new'>ADD BOARD MEMBERS</a>
   <a href='/reviews/nonprofits/<%= nonprofit.id %>/reviews/new'>ADD REVIEWS</a>
 <% } %>
 <br>
-<% console.log(user) %>
 <br>
 <div id="npdata">
 <form action = "/nonprofits/<%=nonprofit._id%>" method = "POST">
