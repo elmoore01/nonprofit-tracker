@@ -4,7 +4,7 @@ Nonprofit collaborations are at an all-time high. Recent surveys reveal that 91 
 
 To solve this issue, we introduce the **Nonprofit Tracker™**.
 
-The Nonprofit Tracker is a hosted database of community based organizations throughout the United States that enables users to quickly search for  nonprofits that offer similar services that are looking to collaborate on a variety of programs.
+The Nonprofit Tracker is a hosted database of community based organizations throughout the United States that enables users to quickly search for nonprofits that offer similar services and are looking to collaborate on a variety of programs.
 
 
 ![](https://www.lifeprepacademy.org/wp-content/uploads/2020/09/NPTracker7.jpg)
