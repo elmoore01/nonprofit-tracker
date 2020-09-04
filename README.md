@@ -22,9 +22,9 @@ The Nonprofit Tracker is a hosted database of community based organizations thro
 - Passport
 - OAuth
  
-**TRELLO:** [Click Here](https://trello.com/b/ZKVkG1FJ/project1-nonprofit-tracker) to see **Trello**.
+**TRELLO:** [Click Here](https://trello.com/b/ZKVkG1FJ/project1-nonprofit-tracker)
 
-**GETTING STARTED:** Please [click here](https://nonprofit-tracker.herokuapp.com) to visit **Nonprofit Tracker**.
+**GETTING STARTED:** [Click Here](https://nonprofit-tracker.herokuapp.com) to visit **Nonprofit Tracker**.
 
 **NEXT STEPS:** For future versions, I will include the following features:
 
